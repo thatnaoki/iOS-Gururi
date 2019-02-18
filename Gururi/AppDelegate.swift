@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         return true
     }
+    
+    func showTimelineStoryboard() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = vc
+    }
 
 }
 

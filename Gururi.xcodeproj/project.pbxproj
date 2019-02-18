@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		98E7C2BB365CB2280002F5D2 /* Pods_Gururi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7964342E165733691A97138B /* Pods_Gururi.framework */; };
 		B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BDE9AF221299C60046DCAA /* AppDelegate.swift */; };
-		B0BDE9B2221299C60046DCAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BDE9B1221299C60046DCAA /* ViewController.swift */; };
-		B0BDE9B5221299C60046DCAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9B3221299C60046DCAA /* Main.storyboard */; };
+		B0BDE9B2221299C60046DCAA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BDE9B1221299C60046DCAA /* SignInViewController.swift */; };
+		B0BDE9B5221299C60046DCAA /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9B3221299C60046DCAA /* SignIn.storyboard */; };
 		B0BDE9B7221299CB0046DCAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9B6221299CB0046DCAA /* Assets.xcassets */; };
 		B0BDE9BA221299CB0046DCAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9B8221299CB0046DCAA /* LaunchScreen.storyboard */; };
-		B0BDE9C222129AA20046DCAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9C122129AA20046DCAA /* GoogleService-Info.plist */; };
+		B0CE4B10221A809C0043ACC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0CE4B0F221A809C0043ACC4 /* GoogleService-Info.plist */; };
+		B0CE4B12221A852F0043ACC4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B11221A852F0043ACC4 /* SignUpViewController.swift */; };
+		B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B13221A88D60043ACC4 /* Firebase.swift */; };
+		B0CE4B16221A897B0043ACC4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B15221A897B0043ACC4 /* Extension.swift */; };
+		B0CE4B18221A89C10043ACC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CE4B17221A89C00043ACC4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +25,16 @@
 		812706B3DDBB8DBAC7E3D603 /* Pods-Gururi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gururi.release.xcconfig"; path = "Target Support Files/Pods-Gururi/Pods-Gururi.release.xcconfig"; sourceTree = "<group>"; };
 		B0BDE9AC221299C60046DCAA /* Gururi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gururi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BDE9AF221299C60046DCAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0BDE9B1221299C60046DCAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B0BDE9B4221299C60046DCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0BDE9B1221299C60046DCAA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B0BDE9B4221299C60046DCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
 		B0BDE9B6221299CB0046DCAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0BDE9B9221299CB0046DCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0BDE9BB221299CB0046DCAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0BDE9C122129AA20046DCAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B0CE4B0F221A809C0043ACC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B0CE4B11221A852F0043ACC4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B0CE4B13221A88D60043ACC4 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		B0CE4B15221A897B0043ACC4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B0CE4B17221A89C00043ACC4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		EF0FEDC12B22208A0FC429B2 /* Pods-Gururi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gururi.debug.xcconfig"; path = "Target Support Files/Pods-Gururi/Pods-Gururi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +56,6 @@
 				EF0FEDC12B22208A0FC429B2 /* Pods-Gururi.debug.xcconfig */,
 				812706B3DDBB8DBAC7E3D603 /* Pods-Gururi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,12 +89,16 @@
 			isa = PBXGroup;
 			children = (
 				B0BDE9AF221299C60046DCAA /* AppDelegate.swift */,
-				B0BDE9B1221299C60046DCAA /* ViewController.swift */,
-				B0BDE9B3221299C60046DCAA /* Main.storyboard */,
+				B0BDE9B1221299C60046DCAA /* SignInViewController.swift */,
+				B0CE4B11221A852F0043ACC4 /* SignUpViewController.swift */,
+				B0BDE9B3221299C60046DCAA /* SignIn.storyboard */,
 				B0BDE9B6221299CB0046DCAA /* Assets.xcassets */,
 				B0BDE9B8221299CB0046DCAA /* LaunchScreen.storyboard */,
-				B0BDE9C122129AA20046DCAA /* GoogleService-Info.plist */,
+				B0CE4B0F221A809C0043ACC4 /* GoogleService-Info.plist */,
 				B0BDE9BB221299CB0046DCAA /* Info.plist */,
+				B0CE4B13221A88D60043ACC4 /* Firebase.swift */,
+				B0CE4B15221A897B0043ACC4 /* Extension.swift */,
+				B0CE4B17221A89C00043ACC4 /* Main.storyboard */,
 			);
 			path = Gururi;
 			sourceTree = "<group>";
@@ -153,9 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BDE9BA221299CB0046DCAA /* LaunchScreen.storyboard in Resources */,
-				B0BDE9C222129AA20046DCAA /* GoogleService-Info.plist in Resources */,
+				B0CE4B18221A89C10043ACC4 /* Main.storyboard in Resources */,
+				B0CE4B10221A809C0043ACC4 /* GoogleService-Info.plist in Resources */,
 				B0BDE9B7221299CB0046DCAA /* Assets.xcassets in Resources */,
-				B0BDE9B5221299C60046DCAA /* Main.storyboard in Resources */,
+				B0BDE9B5221299C60046DCAA /* SignIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,14 +205,28 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Gururi/Pods-Gururi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BDE9B2221299C60046DCAA /* ViewController.swift in Sources */,
+				B0CE4B16221A897B0043ACC4 /* Extension.swift in Sources */,
+				B0CE4B12221A852F0043ACC4 /* SignUpViewController.swift in Sources */,
+				B0BDE9B2221299C60046DCAA /* SignInViewController.swift in Sources */,
+				B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */,
 				B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,12 +252,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B0BDE9B3221299C60046DCAA /* Main.storyboard */ = {
+		B0BDE9B3221299C60046DCAA /* SignIn.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0BDE9B4221299C60046DCAA /* Base */,
 			);
-			name = Main.storyboard;
+			name = SignIn.storyboard;
 			sourceTree = "<group>";
 		};
 		B0BDE9B8221299CB0046DCAA /* LaunchScreen.storyboard */ = {
