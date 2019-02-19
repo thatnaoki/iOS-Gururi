@@ -249,6 +249,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RI8-JJ-WU3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qfh-ES-MVt">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -263,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="264.80000000000001" y="-266.71664167916043"/>
         </scene>
-        <!--Item-->
+        <!--招待作成-->
         <scene sceneID="chJ-gG-saT">
             <objects>
                 <viewController id="AIL-ei-gke" customClass="InviteViewController" customModule="Gururi" customModuleProvider="target" sceneMemberID="viewController">
@@ -316,7 +317,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-dm-6Hy">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-dm-6Hy" customClass="PickerTextField" customModule="Gururi" customModuleProvider="target">
                                                 <rect key="frame" x="72.5" y="510" width="230" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="230" id="d1L-gT-Kbo"/>
@@ -336,7 +337,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="人数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-6t-wiJ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="人数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-6t-wiJ" customClass="PickerTextField" customModule="Gururi" customModuleProvider="target">
                                                 <rect key="frame" x="72.5" y="650" width="230" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="230" id="NfB-IS-AfZ"/>
@@ -414,19 +415,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fA0-M6-xgw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ab1-cf-Rf7"/>
+                    <tabBarItem key="tabBarItem" title="招待作成" image="email" id="ab1-cf-Rf7"/>
                     <size key="freeformSize" width="375" height="950"/>
                     <connections>
                         <outlet property="addButton" destination="Oht-wS-Ikw" id="WXo-7C-PRJ"/>
                         <outlet property="dateTextField" destination="4Fg-km-9ea" id="6MK-aY-HG9"/>
-                        <outlet property="timeTextField" destination="jVX-dm-6Hy" id="kIT-mf-c98"/>
+                        <outlet property="guestNameTextField" destination="QjZ-E6-rTv" id="b4r-l2-GOn"/>
+                        <outlet property="peopleTextField" destination="jUi-6t-wiJ" id="uJ2-WL-ICQ"/>
+                        <outlet property="shopNameTextField" destination="hWf-Ei-guL" id="GZa-h1-xno"/>
+                        <outlet property="telTextField" destination="cVt-bi-QWp" id="fPu-N3-Xk0"/>
+                        <outlet property="timeTextField" destination="jVX-dm-6Hy" id="FOx-0d-yd6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiW-7T-auw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582" y="-452"/>
         </scene>
-        <!--Item-->
+        <!--招待リスト-->
         <scene sceneID="Njf-Gj-Y4Z">
             <objects>
                 <tableViewController id="Ftl-OO-7qY" sceneMemberID="viewController">
@@ -449,13 +454,13 @@
                             <outlet property="delegate" destination="Ftl-OO-7qY" id="0sG-Go-8pA"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="jP1-2I-dJc"/>
+                    <tabBarItem key="tabBarItem" title="招待リスト" image="invitation_accepted" id="jP1-2I-dJc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOa-ra-0J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582" y="456"/>
         </scene>
-        <!--Item-->
+        <!--予約リスト-->
         <scene sceneID="QCA-Cl-DsD">
             <objects>
                 <tableViewController id="Yfl-Wd-ynA" sceneMemberID="viewController">
@@ -478,7 +483,7 @@
                             <outlet property="delegate" destination="Yfl-Wd-ynA" id="ZlO-s3-gz9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Jw3-hB-Kik"/>
+                    <tabBarItem key="tabBarItem" title="予約リスト" image="reservation_list" id="Jw3-hB-Kik"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht9-qm-4fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -507,10 +512,12 @@
     </scenes>
     <resources>
         <image name="email" width="36" height="36"/>
+        <image name="invitation_accepted" width="36" height="36"/>
         <image name="invitation_add" width="36" height="36"/>
         <image name="invitation_done" width="36" height="36"/>
         <image name="invitation_yet" width="36" height="36"/>
         <image name="profile" width="36" height="36"/>
+        <image name="reservation_list" width="36" height="36"/>
         <image name="sample" width="1000" height="667"/>
         <image name="store" width="36" height="36"/>
     </resources>

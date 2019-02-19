@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		98E7C2BB365CB2280002F5D2 /* Pods_Gururi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7964342E165733691A97138B /* Pods_Gururi.framework */; };
+		B014BE9F221BA60100428C70 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B014BE9E221BA60100428C70 /* PickerTextField.swift */; };
 		B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BDE9AF221299C60046DCAA /* AppDelegate.swift */; };
 		B0BDE9B2221299C60046DCAA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BDE9B1221299C60046DCAA /* SignInViewController.swift */; };
 		B0BDE9B5221299C60046DCAA /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0BDE9B3221299C60046DCAA /* SignIn.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		7964342E165733691A97138B /* Pods_Gururi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gururi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812706B3DDBB8DBAC7E3D603 /* Pods-Gururi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gururi.release.xcconfig"; path = "Target Support Files/Pods-Gururi/Pods-Gururi.release.xcconfig"; sourceTree = "<group>"; };
+		B014BE9E221BA60100428C70 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		B0BDE9AC221299C60046DCAA /* Gururi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gururi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BDE9AF221299C60046DCAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0BDE9B1221299C60046DCAA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B0CE4B17221A89C00043ACC4 /* Main.storyboard */,
 				B0CE4B19221AA7230043ACC4 /* ProfileViewController.swift */,
 				B0CE4B1B221B16050043ACC4 /* InviteViewController.swift */,
+				B014BE9E221BA60100428C70 /* PickerTextField.swift */,
 			);
 			path = Gururi;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */,
 				B0CE4B1C221B16050043ACC4 /* InviteViewController.swift in Sources */,
 				B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */,
+				B014BE9F221BA60100428C70 /* PickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
