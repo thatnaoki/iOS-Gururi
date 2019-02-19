@@ -18,6 +18,8 @@
 		B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B13221A88D60043ACC4 /* Firebase.swift */; };
 		B0CE4B16221A897B0043ACC4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B15221A897B0043ACC4 /* Extension.swift */; };
 		B0CE4B18221A89C10043ACC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CE4B17221A89C00043ACC4 /* Main.storyboard */; };
+		B0CE4B1A221AA7240043ACC4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B19221AA7230043ACC4 /* ProfileViewController.swift */; };
+		B0CE4B1C221B16050043ACC4 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B1B221B16050043ACC4 /* InviteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		B0CE4B13221A88D60043ACC4 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		B0CE4B15221A897B0043ACC4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B0CE4B17221A89C00043ACC4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B0CE4B19221AA7230043ACC4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B0CE4B1B221B16050043ACC4 /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		EF0FEDC12B22208A0FC429B2 /* Pods-Gururi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gururi.debug.xcconfig"; path = "Target Support Files/Pods-Gururi/Pods-Gururi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +103,8 @@
 				B0CE4B13221A88D60043ACC4 /* Firebase.swift */,
 				B0CE4B15221A897B0043ACC4 /* Extension.swift */,
 				B0CE4B17221A89C00043ACC4 /* Main.storyboard */,
+				B0CE4B19221AA7230043ACC4 /* ProfileViewController.swift */,
+				B0CE4B1B221B16050043ACC4 /* InviteViewController.swift */,
 			);
 			path = Gururi;
 			sourceTree = "<group>";
@@ -241,10 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CE4B1A221AA7240043ACC4 /* ProfileViewController.swift in Sources */,
 				B0CE4B16221A897B0043ACC4 /* Extension.swift in Sources */,
 				B0CE4B12221A852F0043ACC4 /* SignUpViewController.swift in Sources */,
 				B0BDE9B2221299C60046DCAA /* SignInViewController.swift in Sources */,
 				B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */,
+				B0CE4B1C221B16050043ACC4 /* InviteViewController.swift in Sources */,
 				B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

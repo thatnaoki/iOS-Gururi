@@ -27,6 +27,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         // when already logged in
         if auth.currentUser != nil {
+            print("Sign In automatically")
             if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
                 appDelegate.showTimelineStoryboard()
             }
