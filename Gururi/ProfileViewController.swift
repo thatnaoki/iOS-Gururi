@@ -11,7 +11,6 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     // components
-    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var shopNameLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -27,13 +26,26 @@ class ProfileViewController: UIViewController {
         changeButton.backgroundColor = UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)
         changeButton.layer.cornerRadius = 20.0
         
-        // configure labels
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         configureLabels()
-        
     }
     
     
     // MARK: button actions
+    @IBAction func editButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToEditNames", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EditProfileViewController {
+            guard let shopName = shopNameLabel.text,
+                  let fullName = fullNameLabel.text else {return}
+            vc.shopName = shopName
+            vc.fullName = fullName
+        }
+    }
     
     
     // MARK: functions
@@ -44,7 +56,7 @@ class ProfileViewController: UIViewController {
         
         let uid = user.uid
         
-        db.collection("users").document(uid).getDocument { (document, error) in
+        db.collection("staff").document(uid).getDocument { (document, error) in
             if let error = error {
                 print("error occured" + error.localizedDescription)
                 return
@@ -52,6 +64,16 @@ class ProfileViewController: UIViewController {
             
             if let data = document?.data() {
                 print("this is user data \(data)")
+                
+                if  let email = data["email"] as? String,
+                    let fullName = data["name"] as? String,
+                    let shopName = data["shopName"] as? String {
+                    
+                    self.emailLabel.text = email
+                    self.fullNameLabel.text = fullName
+                    self.shopNameLabel.text = shopName
+                    
+                }
             }
         }
     }

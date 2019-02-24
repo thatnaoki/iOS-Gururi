@@ -23,7 +23,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // validation check
         emailTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
-        formValidation()
         
         // when already logged in
         if auth.currentUser != nil {
