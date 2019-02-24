@@ -303,7 +303,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fg-km-9ea">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fg-km-9ea" customClass="PickerTextField" customModule="Gururi" customModuleProvider="target">
                                                 <rect key="frame" x="72.5" y="440" width="230" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="StO-Ks-rig"/>
@@ -415,7 +415,7 @@
                     <size key="freeformSize" width="375" height="950"/>
                     <connections>
                         <outlet property="addButton" destination="Oht-wS-Ikw" id="WXo-7C-PRJ"/>
-                        <outlet property="dateTextField" destination="4Fg-km-9ea" id="6MK-aY-HG9"/>
+                        <outlet property="dateTextField" destination="4Fg-km-9ea" id="QzA-iM-uyJ"/>
                         <outlet property="guestNameTextField" destination="QjZ-E6-rTv" id="b4r-l2-GOn"/>
                         <outlet property="peopleTextField" destination="jUi-6t-wiJ" id="uJ2-WL-ICQ"/>
                         <outlet property="shopNameTextField" destination="hWf-Ei-guL" id="GZa-h1-xno"/>

@@ -12,10 +12,6 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
 
     var dataList = [String]()
     
-//    init() {
-//        super.init(CGRect.zero)
-//    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -34,7 +30,7 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
         
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
         let spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneForTimePicker))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneForPickerView))
         toolbar.setItems([spaceItem, doneItem], animated: true)
         
         self.inputView = picker
@@ -58,7 +54,7 @@ class PickerTextField: UITextField, UIPickerViewDelegate, UIPickerViewDataSource
         self.text = dataList[row]
     }
     
-    @objc func doneForTimePicker() {
+    @objc func doneForPickerView() {
         self.endEditing(true)
     }
 

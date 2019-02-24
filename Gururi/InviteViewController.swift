@@ -12,16 +12,20 @@ class InviteViewController: UIViewController {
     
     // properties
     @IBOutlet weak var shopNameTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var dateTextField: PickerTextField!
     @IBOutlet weak var timeTextField: PickerTextField!
     @IBOutlet weak var guestNameTextField: UITextField!
     @IBOutlet weak var peopleTextField: PickerTextField!
     @IBOutlet weak var telTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
+    let datePicker = UIPickerView()
+    let timePicker = UIPickerView()
+    
     // prepare lists for picker view
-    var timeList : [String] = ["18:00", "19:00", "20:00", "21:00"]
-    var peopleList : [String] = ["2", "3", "4", "5", "6", "7"]
+    var timeList : [String] = ["18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"]
+    var peopleList : [String] = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    var dateList : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,43 +43,17 @@ class InviteViewController: UIViewController {
         peopleTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         telTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         
-        // prepare date picker views
-        prepareDatePicker()
-        // prepare time picker views
-        timeTextField.setup(dataList: timeList)
-        // prepare people picker view
-        peopleTextField.setup(dataList: peopleList)
+        // init shop name
+        getShopName { shopName in
+            self.shopNameTextField.text = shopName
+        }
+        
+        // configure picker views
+        configurePickerViews()
 
     }
     
-    // functions
-    func prepareDatePicker() {
-        
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = UIDatePicker.Mode.date
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.locale = Locale.current
-        
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneForDatePicker))
-        toolbar.setItems([spaceItem, doneItem], animated: true)
-        
-        dateTextField.inputView = datePicker
-        dateTextField.inputAccessoryView = toolbar
-        
-    }
-    
-    // func called when item choosen
-    @objc func doneForDatePicker() {
-        dateTextField.endEditing(true)
-        
-        // date format
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        dateTextField.text = "\(formatter.string(from: Date()))"
-    }
-    
+    // MARK: functions
     // close keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -106,49 +84,45 @@ class InviteViewController: UIViewController {
         addButton.backgroundColor = UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)
         
     }
-
-}
-
-
-
-// extension for time picker
-extension InviteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func prepareTimePicker() {
+    // get shop name
+    func getShopName(handler: @escaping(String?)->Void){
+        if let uid = auth.currentUser?.uid {
+            db.collection("staff").document(uid).getDocument { documentSnapshot, error in
+                if let data = documentSnapshot?.data() {
+                    guard let shopName = data["shopName"] as? String else {return}
+                    handler(shopName)
+                }
+            }
+        }
+    }
+    
+    // configure PickerViews
+    func configurePickerViews() {
+        // prepare date picker
+        prepareDateList()
+        dateTextField.setup(dataList: dateList)
+        dateTextField.text = dateList[0]
+        // prepare time picker views
+        timeTextField.setup(dataList: timeList)
+        timeTextField.text = timeList[0]
+        // prepare people picker view
+        peopleTextField.setup(dataList: peopleList)
+        peopleTextField.text = peopleList[0]
+    }
+    
+    // prepare for date picker view
+    func prepareDateList() {
         
-        let timePicker = UIPickerView()
-        timePicker.delegate = self
-        timePicker.dataSource = self
-        timePicker.showsSelectionIndicator = true
+        let today = Date()
+        let tomorrow = today + 60*60*24
         
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneForTimePicker))
-        toolbar.setItems([spaceItem, doneItem], animated: true)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM月dd日"
+        let todayString = "\(formatter.string(from: today))"
+        let tomorrowString = "\(formatter.string(from: tomorrow))"
         
-        timeTextField.inputView = timePicker
-        timeTextField.inputAccessoryView = toolbar
-        
+        dateList = [todayString, tomorrowString]
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return timeList.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return timeList[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        timeTextField.text = timeList[row]
-    }
-    
-    @objc func doneForTimePicker() {
-        timeTextField.endEditing(true)
-    }
-    
+
 }
