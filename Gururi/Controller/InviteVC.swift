@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class InviteViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class InviteViewController: UIViewController {
     
     let datePicker = UIPickerView()
     let timePicker = UIPickerView()
+    
+    var shopName : String?
+    var staffName : String?
     
     // prepare lists for picker view
     var timeList : [String] = ["18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"]
@@ -44,9 +48,12 @@ class InviteViewController: UIViewController {
         telTextField.addTarget(self, action: #selector(formValidation), for: .editingChanged)
         
         // init shop name
-        getShopName { shopName in
+        getShopNameAndStaffName(handler: { shopName, staffName in
+            print(shopName)
             self.shopNameTextField.text = shopName
-        }
+            self.shopName = shopName
+            self.staffName = staffName
+        })
         
         // configure picker views
         configurePickerViews()
@@ -86,12 +93,14 @@ class InviteViewController: UIViewController {
     }
     
     // get shop name
-    func getShopName(handler: @escaping(String?)->Void){
+    func getShopNameAndStaffName(handler: @escaping(String?, String?)->Void){
         if let uid = auth.currentUser?.uid {
             db.collection("staff").document(uid).getDocument { documentSnapshot, error in
                 if let data = documentSnapshot?.data() {
-                    guard let shopName = data["shopName"] as? String else {return}
-                    handler(shopName)
+                    guard
+                        let shopName = data["shopName"] as? String,
+                        let staffName = data["name"] as? String else {return}
+                    handler(shopName, staffName)
                 }
             }
         }
@@ -125,4 +134,35 @@ class InviteViewController: UIViewController {
         dateList = [todayString, tomorrowString]
     }
 
+    // MARK: button actions
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+        SVProgressHUD.show()
+        
+        guard
+            let shopName = shopNameTextField.text,
+            let date = dateTextField.text,
+            let time = timeTextField.text,
+            let guestName = guestNameTextField.text,
+            let people = peopleTextField.text,
+            let tel = telTextField.text,
+            let uid = auth.currentUser?.uid else {return}
+        
+        db.collection("invite").document().setData([
+            "time" : time,
+            "date" : date,
+            "from_uid" : uid,
+            "guestName" : guestName,
+            "people" : people,
+            "tel" : tel,
+            "shopName" : shopName,
+            "staffName" : staffName!,
+            "inviteFlag" : true
+        ]) { error in
+            print(error?.localizedDescription)
+            return
+        }
+        SVProgressHUD.dismiss()
+        self.showAlert(message: "Invitation Created!")
+    }
 }

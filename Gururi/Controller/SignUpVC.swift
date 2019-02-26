@@ -55,9 +55,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 let user = auth.currentUser
                 
                 if let user = user {
-                    db.collection("users").document(user.uid).setData([
-                        "Name" : self.fullNameTextField.text!,
-                        "Shop Name" : self.shopNameTextField.text!,
+                    db.collection("staff").document(user.uid).setData([
+                        "staff_uid" : user.uid,
+                        "name" : self.fullNameTextField.text!,
+                        "email" : self.emailTextField.text!,
+                        "shopName" : self.shopNameTextField.text!
                         ])
                 }
                 SVProgressHUD.dismiss()
