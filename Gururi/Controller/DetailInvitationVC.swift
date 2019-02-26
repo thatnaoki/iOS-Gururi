@@ -48,6 +48,40 @@ class DetailInvitationViewController: UIViewController {
     
     // send by LINE
     @IBAction func sendButtonPressed(_ sender: UIButton) {
+        
+        // unwrap
+        guard let invitationId = self.invitation?.invitationId else {return}
+        
+        // URL scheme
+        var urlScheme = "line://msg/text/?代行で予約しておいたので、予約内容の確認だけお願いします。【予約代行完了|ランデブー】https://reserve-beta.firebaseapp.com//invitepage/\(invitationId)"
+        
+        // encode
+        urlScheme = urlScheme.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        
+        // create URL
+        guard let url = URL(string: urlScheme) else {
+            print("cannot create URL")
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: { (succes) in
+                    
+                })
+            }else{
+                UIApplication.shared.openURL(url)
+            }
+        }else {
+            // if line is not installed
+            let alertController = UIAlertController(title: "エラー",
+                                                    message: "LINEがインストールされていません",
+                                                    preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
+            present(alertController,animated: true,completion: nil)
+        
+        }
+    
     }
     
     // MARK: functions
@@ -78,7 +112,4 @@ class DetailInvitationViewController: UIViewController {
             }
         }
     }
-
-    
-    
 }
