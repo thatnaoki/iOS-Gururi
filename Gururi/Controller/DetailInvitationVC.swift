@@ -53,7 +53,7 @@ class DetailInvitationViewController: UIViewController {
         guard let invitationId = self.invitation?.invitationId else {return}
         
         // URL scheme
-        var urlScheme = "line://msg/text/?代行で予約しておいたので、予約内容の確認だけお願いします。【予約代行完了|ランデブー】https://reserve-beta.firebaseapp.com//invitepage/\(invitationId)"
+        var urlScheme = "line://msg/text/?代行で予約しておいたので、予約内容の確認だけお願いします。【予約代行完了|ランデブー】https://reserve-beta.firebaseapp.com/invitepage/\(invitationId)"
         
         // encode
         urlScheme = urlScheme.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!

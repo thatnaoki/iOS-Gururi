@@ -28,6 +28,10 @@
 		B0CE4B1C221B16050043ACC4 /* InviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CE4B1B221B16050043ACC4 /* InviteVC.swift */; };
 		B0D1DB012224DDC7000609A6 /* DetailInvitationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1DB002224DDC7000609A6 /* DetailInvitationVC.swift */; };
 		B0D1DB032224E7A5000609A6 /* EditInvitationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1DB022224E7A5000609A6 /* EditInvitationVC.swift */; };
+		B0D1DB05222518F6000609A6 /* ReservationTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1DB04222518F6000609A6 /* ReservationTableVC.swift */; };
+		B0D1DB0722251B88000609A6 /* DetailReservationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1DB0622251B88000609A6 /* DetailReservationVC.swift */; };
+		B0D1DB0A22251C2B000609A6 /* ReservationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D1DB0822251C2B000609A6 /* ReservationTableViewCell.swift */; };
+		B0D1DB0B22251C2B000609A6 /* ReservationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0D1DB0922251C2B000609A6 /* ReservationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		B0CE4B1B221B16050043ACC4 /* InviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteVC.swift; sourceTree = "<group>"; };
 		B0D1DB002224DDC7000609A6 /* DetailInvitationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInvitationVC.swift; sourceTree = "<group>"; };
 		B0D1DB022224E7A5000609A6 /* EditInvitationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInvitationVC.swift; sourceTree = "<group>"; };
+		B0D1DB04222518F6000609A6 /* ReservationTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableVC.swift; sourceTree = "<group>"; };
+		B0D1DB0622251B88000609A6 /* DetailReservationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReservationVC.swift; sourceTree = "<group>"; };
+		B0D1DB0822251C2B000609A6 /* ReservationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTableViewCell.swift; sourceTree = "<group>"; };
+		B0D1DB0922251C2B000609A6 /* ReservationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationTableViewCell.xib; sourceTree = "<group>"; };
 		EF0FEDC12B22208A0FC429B2 /* Pods-Gururi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gururi.debug.xcconfig"; path = "Target Support Files/Pods-Gururi/Pods-Gururi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +136,8 @@
 				B0BDE9B3221299C60046DCAA /* SignIn.storyboard */,
 				B09BDFC1222463DB00E4EB24 /* InvitationTableViewCell.swift */,
 				B09BDFC2222463DB00E4EB24 /* InvitationTableViewCell.xib */,
+				B0D1DB0822251C2B000609A6 /* ReservationTableViewCell.swift */,
+				B0D1DB0922251C2B000609A6 /* ReservationTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +171,8 @@
 				B00DACF12222FF4200B95A80 /* InvitationTableVC.swift */,
 				B0D1DB002224DDC7000609A6 /* DetailInvitationVC.swift */,
 				B0D1DB022224E7A5000609A6 /* EditInvitationVC.swift */,
+				B0D1DB04222518F6000609A6 /* ReservationTableVC.swift */,
+				B0D1DB0622251B88000609A6 /* DetailReservationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 				B0CE4B18221A89C10043ACC4 /* Main.storyboard in Resources */,
 				B0CE4B10221A809C0043ACC4 /* GoogleService-Info.plist in Resources */,
 				B0BDE9B7221299CB0046DCAA /* Assets.xcassets in Resources */,
+				B0D1DB0B22251C2B000609A6 /* ReservationTableViewCell.xib in Resources */,
 				B0BDE9B5221299C60046DCAA /* SignIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +321,8 @@
 				B0D1DB032224E7A5000609A6 /* EditInvitationVC.swift in Sources */,
 				B0CE4B16221A897B0043ACC4 /* Extension.swift in Sources */,
 				B0CE4B12221A852F0043ACC4 /* SignUpVC.swift in Sources */,
+				B0D1DB0722251B88000609A6 /* DetailReservationVC.swift in Sources */,
+				B0D1DB0A22251C2B000609A6 /* ReservationTableViewCell.swift in Sources */,
 				B0D1DB012224DDC7000609A6 /* DetailInvitationVC.swift in Sources */,
 				B0BDE9B2221299C60046DCAA /* SignInVC.swift in Sources */,
 				B0CE4B14221A88D60043ACC4 /* Firebase.swift in Sources */,
@@ -315,6 +330,7 @@
 				B0CE4B1C221B16050043ACC4 /* InviteVC.swift in Sources */,
 				B09BDFC3222463DB00E4EB24 /* InvitationTableViewCell.swift in Sources */,
 				B00DACF22222FF4200B95A80 /* InvitationTableVC.swift in Sources */,
+				B0D1DB05222518F6000609A6 /* ReservationTableVC.swift in Sources */,
 				B0BDE9B0221299C60046DCAA /* AppDelegate.swift in Sources */,
 				B014BE9F221BA60100428C70 /* PickerTextField.swift in Sources */,
 				B00DACF022222E2200B95A80 /* EditProfileVC.swift in Sources */,

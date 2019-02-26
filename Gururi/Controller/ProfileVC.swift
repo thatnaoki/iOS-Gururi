@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController {
         changeButton.backgroundColor = UIColor(red: 17/255, green: 154/255, blue: 237/255, alpha: 1)
         changeButton.layer.cornerRadius = 20.0
         
+        configureLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {

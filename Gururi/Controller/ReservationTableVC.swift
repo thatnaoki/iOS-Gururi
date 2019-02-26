@@ -1,18 +1,18 @@
 //
-//  InvitationTableViewController.swift
+//  ReservationTableViewController.swift
 //  Gururi
 //
-//  Created by Naoki Muroya on 2019/02/25.
+//  Created by Naoki Muroya on 2019/02/26.
 //  Copyright © 2019 Gururi. All rights reserved.
 //
 
 import UIKit
 import SVProgressHUD
 
-class InvitationTableViewController: UITableViewController {
+class ReservationTableViewController: UITableViewController {
 
     // MARK: properties
-    var invitations: [Invitation] = [Invitation]()
+    var reservations: [Invitation] = [Invitation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +28,9 @@ class InvitationTableViewController: UITableViewController {
     // MARK: functions
     func updateView() {
         SVProgressHUD.show()
-        fetchInvitationData() { invitations in
-            self.invitations = invitations
-            print("in updateView() -> \(self.invitations)")
+        fetchInvitationData() { reservations in
+            self.reservations = reservations
+            print("in updateView() -> \(self.reservations)")
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
@@ -39,13 +39,13 @@ class InvitationTableViewController: UITableViewController {
     
     func fetchInvitationData(completion: @escaping([Invitation])->Void) {
         
-        var invitationList: [Invitation] = []
+        var reservationList: [Invitation] = []
         
         guard let uid = auth.currentUser?.uid else {return}
         
         let group = DispatchGroup()
-    
-        db.collection("invite").whereField("from_uid", isEqualTo: uid).whereField("inviteFlag", isEqualTo: true).getDocuments() { querySnapshot, error in
+        
+        db.collection("invite").whereField("from_uid", isEqualTo: uid).whereField("inviteFlag", isEqualTo: false).getDocuments() { querySnapshot, error in
             if let error = error {
                 print(error)
                 return
@@ -77,19 +77,19 @@ class InvitationTableViewController: UITableViewController {
                         staffName: staffName
                     )
                     // append invitaion instance
-                    invitationList.append(invitation)
+                    reservationList.append(invitation)
                     group.leave()
                 }
                 // closure
                 group.notify(queue: .main) {
-                    completion(invitationList)
+                    completion(reservationList)
                 }
             }
         }
     }
 }
 
-extension InvitationTableViewController {
+extension ReservationTableViewController {
     
     // MARK: - Table view data source
     
@@ -98,14 +98,14 @@ extension InvitationTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return invitations.count
+        return reservations.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! InvitationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReservationTableViewCell
         
-        cell.invitation = self.invitations[indexPath.row]
+        cell.reservation = self.reservations[indexPath.row]
         
         return cell
         
@@ -113,25 +113,24 @@ extension InvitationTableViewController {
     
 }
 
-extension InvitationTableViewController {
+extension ReservationTableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToDetail", sender: invitations[indexPath.row])
+        performSegue(withIdentifier: "goToDetail", sender: reservations[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? DetailInvitationViewController {
-            vc.invitation = sender as? Invitation
+        if let vc = segue.destination as? DetailReservationViewController {
+            vc.reservation = sender as? Invitation
         }
     }
-    
 }
 
 // MARK: configure tableview
-extension InvitationTableViewController {
+extension ReservationTableViewController {
     func configureTableview() {
-        tableView.register(UINib(nibName: "InvitationTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "ReservationTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
     }
